@@ -3,4 +3,4 @@
 all: chords
 
 chords:
-	$(MAKE) -C chords
+	$(MAKE) -C sm/hug-chords
