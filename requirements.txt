@@ -1,0 +1,1 @@
+-e git+/home/piro/dev/chordlab#egg=chordlab
