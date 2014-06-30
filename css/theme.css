@@ -1,0 +1,13 @@
+body {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+div.jumbotron {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+div.jumbotron h1 {
+    font-size: 48px;
+}
