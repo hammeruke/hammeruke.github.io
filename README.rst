@@ -8,7 +8,7 @@ In order to start working on the project::
     virtualenv env
     source env/bin/activate
     pip install -r requirements.txt
-    git submodules init
+    git clone https://github.com/hammeruke/hug-chords.git   # or symlink...
 
 In order to create the website::
 
