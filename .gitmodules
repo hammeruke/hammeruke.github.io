@@ -1,3 +1,3 @@
-[submodule "sm/hug-chords"]
-	path = sm/hug-chords
-	url = /home/piro/dev/ukulele/
+[submodule "hug-chords"]
+	path = hug-chords
+	url = https://github.com/hammeruke/hug-chords.git

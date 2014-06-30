@@ -1,1 +1,2 @@
--e git+/home/piro/dev/chordlab#egg=chordlab
+-e git+https://github.com/hammeruke/chordlab.git#egg=chordlab
+reportlab>=3.0

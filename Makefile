@@ -3,12 +3,12 @@
 all: chords
 
 chords:
-	(cd sm/hug-chords && git pull)
-	$(MAKE) -C sm/hug-chords
-	rsync -av --delete sm/hug-chords/pdfs .
+	(cd hug-chords && git pull)
+	$(MAKE) -C hug-chords
+	rsync -av --delete hug-chords/pdfs .
 
 upload:
-	git add sm/hug-chords
+	git add hug-chords
 	git add pdfs
 	git commit -m "Commit for upload on `date`"
 	git push
