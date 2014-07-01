@@ -4,7 +4,7 @@ RENDER = ./bin/render.py
 
 all: chords html
 
-html: index.html
+html: index.html songs.html
 
 %.html: templates/%.tmpl templates/base.tmpl
 	$(RENDER) `basename $<` > $@
