@@ -15,5 +15,3 @@ In order to create the website::
     [change the pages or create new songsheets]
     make
     make upload
-
-...untested...
