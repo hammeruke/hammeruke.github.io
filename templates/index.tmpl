@@ -4,53 +4,130 @@
 
 {% block body %}
 
-  <div class="container" role="main">
-
-    <div class="jumbotron">
-      <h1>Hammersmith Ukulele Group!</h1>
-      <p>Just a bunch of people meeting forthnightishly for a strum.</p>
+  <section id="header" class="appear"></section>
+  <div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
+     <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="fa fa-bars color-white"></span>
+        </button>
+        <h1><a class="navbar-brand" href="index.html" data-0="line-height:90px;" data-300="line-height:50px;">      H.U.G.
+        </a></h1>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="#section-who">Who</a></li>
+          <li><a href="#section-where">Where</a></li>
+          <li><a href="#section-when">When</a></li>
+        </ul>
+      </div><!--/.navbar-collapse -->
     </div>
-
-    <div class="row">
-      <div class="col-sm-4">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Who</h3>
-          </div>
-          <div class="panel-body">
-We are amateurs and welcome beginners. Bring an ukulele if you can, if not we may have one spare for you.
-          </div>
-        </div>
-      </div><!-- /.col-sm-4 -->
-      <div class="col-sm-4">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Where</h3>
-          </div>
-          <div class="panel-body">
-You can find us in West London: we usually meet at <a href="http://www.stonemasons-arms.co.uk/find-us">The Stonemason's Arms</a>.
-          </div>
-        </div>
-      </div><!-- /.col-sm-4 -->
-      <div class="col-sm-4">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">When</h3>
-          </div>
-          <div class="panel-body">
-We are currently meeting on the second and fourth Monday of each month at 7:30pm.
-          </div>
-        </div>
-      </div><!-- /.col-sm-4 -->
-    </div>
-
-    <p>
-      <a class="btn btn-primary" href="/songs.html">Download</a> our songsheets to know what we do
-    </p>
-    <p>
-      <a class="btn btn-primary" href="https://www.facebook.com/groups/332494077495/">Join</a> our Facebook group for the latest update
-    </p>
-
   </div>
+
+  <section class="featured" id="top">
+    <div class="container">
+      <div class="row mar-bot40">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="align-center">
+            <h2 class="slogan">Hammersmith Ukulele Group</h2>
+            <p>
+      A bunch of guys and gals with an ukulele,
+      meeting forthnightishly for a strum.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-who" class="section appear clearfix">
+    <div class="container">
+      <div class="row mar-bot40">
+        <div class="col-md-offset-3 col-md-6">
+          <div class="section-header">
+            <h2 class="section-heading animated" data-animation="bounceInUp">Who are we</h2>
+            <p>We are a bunch of amateur ukulele players, blah blah </p>
+            <p>If you want to stay up to date you can join our <a href="https://www.facebook.com/groups/332494077495/">Facebook group</a>.</p>
+            <p><b>TODO:</b> add uke picture below</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--
+  This must be an uke image
+  <section id="who-sep" class="section" data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="align-center">
+            <div class="who-sep pad-top40 pad-bot40 clearfix">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <section id="section-where" class="section appear clearfix">
+  <div class="container">
+    <div class="row mar-bot40">
+      <div class="col-md-offset-3 col-md-6">
+        <div class="section-header">
+          <h2 class="section-heading animated" data-animation="bounceInUp">Where do we meet?</h2>
+          <p>We usually meet at <a href="http://www.stonemasons-arms.co.uk/find-us">The Stonemason's Arms</a>, in Hammersmith, London. You can usually find us on the top floor: just grab your favourite glass and reach us.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section id="where-sep" class="section" data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="align-center">
+            <div class="where-sep pad-top40 pad-bot40 clearfix">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-when" class="section appear clearfix">
+    <div class="container">
+      <div class="row mar-bot40">
+        <div class="col-md-offset-3 col-md-6">
+          <div class="section-header">
+            <h2 class="section-heading animated" data-animation="bounceInUp">When do we meet?</h2>
+            <p>We are currently meeting on the second and fourth Monday each month, although this rule is being discussed... Better check our calendar I guess.</p>
+            <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=300&amp;wkst=2&amp;bgcolor=%23F7F7F7&amp;src=1ccuiva5no6f9p2r0c21ok3gos%40group.calendar.google.com&amp;color=%232F6309&amp;ctz=Europe%2FLondon" style=" border-width:0 " width="600" height="300" frameborder="0" scrolling="no"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="footer" class="section footer">
+    <div class="container">
+      <div class="row animated opacity mar-bot20" data-andown="fadeIn" data-animation="animation">
+        <div class="col-sm-12 align-center">
+          <ul class="social-network social-circle">
+            <li><a href="https://www.facebook.com/groups/332494077495/" class="icoFacebook" title="Join our Facebook Group"><i class="fa fa-facebook"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row align-center copyright">
+          <div class="col-sm-12"><p>Copyright &copy; 2014 Piro - Theme Amoeba by <a href="http://bootstraptaste.com">Bootstraptaste</a></p></div>
+      </div>
+    </div>
+  </section>
+
+  <a href="#header" class="scrollup"><i class="fa fa-chevron-up"></i></a>
 
 {% endblock %}
