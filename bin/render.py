@@ -56,7 +56,7 @@ def read_chords():
     folders = []
     for (dirpath, dirnames, filenames) in os.walk(pdfroot):
         f = Folder(
-            title=relpath(dirpath).title(),
+            title=(relpath(dirpath) or 'books').title(),
             content=[])
         folders.append(f)
         for fn in filenames:

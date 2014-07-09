@@ -4,31 +4,60 @@
 
 {% block body %}
 
-  <div class="container" role="main">
+<div id="header-wrapper" class="wrapper">
+  <div class="container">
     <div class="row">
+      <div class="12u">
 
-      {% for folder in folders %}
-        {% if folder.title %}
-          <div class="page-header">
-            <h1>{{ folder.title }}</h1>
+        <!-- Header -->
+        <div id="header">
+
+          <!-- Logo -->
+          <div id="logo">
+            <h1><a href="#">H.U.G. Song sheets</a></h1>
           </div>
-        {% endif %}
+          <!-- /Logo -->
 
-        <ul class="list-group">
-          {% for pdf in folder.content %}
-            <li class="list-group-item">
-              <a href="{{ pdf.path }}">{{ pdf.title }}</a>
-              {% if pdf.author %} &mdash; {{pdf.author}}{% endif %}
-            </li>
-          {% endfor %}
-        </ul>
-      {% endfor %}
+          <!-- Nav -->
+          <nav id="nav">
+            <ul>
+              {% for folder in folders %}
+                <li><a href="#sect{{ loop.index }}">{{ folder.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </nav>
+          <!-- /Nav -->
 
-    <p>
-      <a class="btn btn-primary" href="/">Back</a> to the homepage
-    </p>
+        </div>
+        <!-- /Header -->
 
+      </div>
+    </div>
   </div>
+</div>
+<!-- /Header Wrapper -->
+
+{% for folder in folders %}
+  <div id="sect{{ loop.index}}" class="wrapper wrapper-style{{ loop.cycle('3', '2') }}">
+    <div class="title">{{ folder.title|default('Books', true) }}</div>
+    <div class="container">
+      <div class="row">
+        <div class="12u">
+
+          <ul class="list-group">
+            {% for pdf in folder.content %}
+              <li class="list-group-item">
+                <a href="{{ pdf.path }}">{{ pdf.title }}</a>
+                {% if pdf.author %} &mdash; {{pdf.author}}{% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
 
 {% endblock %}
 
