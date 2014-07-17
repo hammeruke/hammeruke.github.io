@@ -2,47 +2,22 @@
 
 {% set title = "Hammersmith Ukulele Group Songsheets" %}
 
-{% block body %}
-
-<div id="header-wrapper" class="wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="12u">
-
-        <!-- Header -->
-        <div id="header">
-
-          <!-- Logo -->
-          <div id="logo">
-            <h1><a href="#">H.U.G. Song sheets</a></h1>
-          </div>
-          <!-- /Logo -->
-
-          <!-- Nav -->
-          <nav id="nav">
-            <ul>
+{% block navbar %}
+          <ul class="nav navbar-nav">
               {% for folder in folders %}
                 <li><a href="#sect{{ loop.index }}">{{ folder.title }}</a></li>
               {% endfor %}
-            </ul>
-          </nav>
-          <!-- /Nav -->
+          </ul>
+{% endblock %}
 
-        </div>
-        <!-- /Header -->
+{% block body %}
 
-      </div>
-    </div>
-  </div>
-</div>
-<!-- /Header Wrapper -->
+  <div class="container" role="main">
+    <div class="row">
 
 {% for folder in folders %}
-  <div id="sect{{ loop.index}}" class="wrapper wrapper-style{{ loop.cycle('3', '2') }}">
-    <div class="title">{{ folder.title|default('Books', true) }}</div>
-    <div class="container">
-      <div class="row">
-        <div class="12u">
+  <div class="col-lg-6" id="sect{{ loop.index}}" class="wrapper wrapper-style{{ loop.cycle('3', '2') }}">
+    <h1>{{ folder.title|default('Compilation Songbooks', true) }}</h1>
 
           <ul class="list-group">
             {% for pdf in folder.content %}
@@ -54,10 +29,9 @@
           </ul>
 
         </div>
-      </div>
-    </div>
-  </div>
 {% endfor %}
+</div>
+</div>
 
 {% endblock %}
 

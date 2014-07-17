@@ -1,0 +1,29 @@
+.jumbotron {
+    background-size: cover;
+    border: none;
+    margin-bottom: 0px;
+}
+.jumbotron#title {
+    background-image: url('../img/uke.jpg');
+}
+.jumbotron#where {
+    background-attachment: fixed;
+    background-image: url('../img/stonemasons.jpg');
+}
+.jumbotron#when {
+    background-attachment: fixed;
+    background-image: url('../img/clocks.jpg');
+}
+.jumbotron .container{
+    background-color: rgba(0,0,0,0.6);
+}
+div.grey {
+    background-color: #c8c8c8;
+    color: #272b30;
+}
+div.grey a, div.grey h1, div.grey h2, div.grey h3, div.grey h4, div.grey h5, div.grey h6 {
+    color: #000;
+}
+div.grey, div.black {
+    padding-bottom: 2em;
+}
