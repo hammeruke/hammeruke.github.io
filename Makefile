@@ -13,6 +13,9 @@ chords:
 	(cd hug-chords && git pull)
 	$(MAKE) -C hug-chords
 	rsync -av --delete hug-chords/pdfs .
+	mogrify  -format png pdfs/hug-songbook.pdf
+	mogrify -background '#ffffff' -flatten pdfs/*.png
+
 
 upload:
 	git add --all pdfs
