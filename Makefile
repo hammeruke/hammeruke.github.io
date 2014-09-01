@@ -12,9 +12,9 @@ html: index.html songs.html
 chords:
 	(cd hug-chords && git pull)
 	$(MAKE) -C hug-chords
+	mogrify  -format png hug-chords/pdfs/hug-songbook.pdf
+	mogrify -background '#ffffff' -flatten hug-chords/pdfs/*.png
 	rsync -av --delete hug-chords/pdfs .
-	mogrify  -format png pdfs/hug-songbook.pdf
-	mogrify -background '#ffffff' -flatten pdfs/*.png
 
 
 upload:

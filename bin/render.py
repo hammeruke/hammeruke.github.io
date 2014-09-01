@@ -17,8 +17,7 @@ def render(name):
     tmpl = env.get_template(name)
     args = {}
 
-    if name == 'songs.tmpl':
-        args['folders'] = read_chords()
+    args['folders'], args['pngs'] = read_chords()
 
     return tmpl.render(**args)
 
@@ -47,6 +46,7 @@ def read_chords():
     from collections import namedtuple
     Folder = namedtuple('Folder', 'title content')
     Pdf = namedtuple('Pdf', 'path title author')
+    Png = namedtuple('Png', 'path')
     pdfroot = fullpath('hug-chords', 'pdfs')
 
     def relpath(fn):
@@ -54,12 +54,16 @@ def read_chords():
         return fn[len(pdfroot)+1:]
 
     folders = []
+    pngs = []
     for (dirpath, dirnames, filenames) in os.walk(pdfroot):
         f = Folder(
             title=(relpath(dirpath) or 'books').title(),
             content=[])
         folders.append(f)
         for fn in filenames:
+            if fn.endswith('.png'):
+                path = relpath(dirpath + '/' + fn)
+                pngs.append(Png(path))
             if not fn.endswith('.pdf'):
                 continue
             path = relpath(dirpath + '/' + fn)
@@ -73,7 +77,7 @@ def read_chords():
 
     folders.sort(key=attrgetter('title'))
 
-    return folders
+    return folders, pngs
 
 if __name__ == '__main__':
     import sys
