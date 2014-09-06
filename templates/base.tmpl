@@ -9,6 +9,7 @@
     <!-- Bootstrap -->
     <link href="http://netdna.bootstrapcdn.com/bootswatch/3.2.0/slate/bootstrap.min.css" rel="stylesheet">
     <link href="css/theme.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,6 +27,12 @@
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
         {% block navbar %}
+          <ul class="nav navbar-nav">
+            <li> <a href="index.html#who">Who</a> </li>
+            <li> <a href="index.html#what">What</a> </li>
+            <li> <a href="index.html#where">Where</a> </li>
+            <li> <a href="index.html#when">When</a> </li>
+          </ul>
         {% endblock %}
           <ul class="nav navbar-nav navbar-right">
             <li><a href="http://spacehobo.com/mailman/listinfo/hug">Mailing List</a></li>
@@ -40,6 +47,12 @@
       <div class="container text-center">
           <h1>Hammersmith Ukulele Group</h1>
           <p>Amateur ukulele night every 2nd and 4th Monday at the Stonemasons Arms in Hammersmith</p>
+          <p>
+              <a href="https://github.com/hammeruke/hug-chords/tree/master/chords/hug" class="label label-info" style="border-radius: 100%;"><i class="fa fa-github"></i></a>
+              <a href="http://spacehobo.com/mailman/listinfo/hug" class="label label-success" style="border-radius: 100%;"><i class="fa fa-envelope"></i></a>
+              <a href="http://www.stonemasons-arms.co.uk/find-us" class="label label-primary" style="border-radius: 100%;"><i class="fa fa-beer"></i></a>
+              <a href="https://www.facebook.com/groups/332494077495/" class="label label-danger" style="border-radius: 100%;"><i class="fa fa-facebook-square"></i></a>
+          </p>
       </div>
     </div>
 {% endblock %}
