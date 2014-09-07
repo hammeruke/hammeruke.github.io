@@ -27,3 +27,70 @@ div.grey a, div.grey h1, div.grey h2, div.grey h3, div.grey h4, div.grey h5, div
 div.grey, div.black {
     padding-bottom: 2em;
 }
+
+.icon.circle {
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    border: 0;
+    border-radius: 100%;
+    display: inline-block;
+    height: 2.25em;
+    width: 2.25em;
+    font-size: 1.25em;
+    left: 0;
+    line-height: 2.25em;
+    text-align: center;
+    text-decoration: none;
+    top: 0;
+}
+.icon.circle:hover {
+    top: -0.2em;
+}
+
+.icon.circle.fa-facebook {
+    background: #7490c3;
+    color: white;
+}
+.icon.circle.fa-facebook:hover {
+    background: #829bc9;
+}
+
+.icon.circle.fa-twitter {
+    background: #70aecd;
+    color: white;
+}
+.icon.circle.fa-twitter:hover {
+    background: #7fb7d2;
+}
+
+.icon.circle.fa-google-plus {
+    background: #db6b67;
+    color: white;
+}
+.icon.circle.fa-google-plus:hover {
+    background: #df7b77;
+}
+
+.icon.circle.fa-github, .btn-github {
+    background: #dcad8b;
+    color: white;
+}
+.icon.circle.fa-github:hover, .btn-github:hover {
+    background: #e1b89b;
+}
+
+.icon.circle.fa-dribbble {
+    background: #da83ae;
+    color: white;
+}
+.icon.circle.fa-dribbble:hover {
+    background: #df93b8;
+}
+
+.stonemasons {
+    color: #dfdf93;
+}
+
