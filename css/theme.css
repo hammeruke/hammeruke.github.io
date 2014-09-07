@@ -94,3 +94,8 @@ div.grey, div.black {
     color: #dfdf93;
 }
 
+.icon.circle.stonemasons {
+    border-color: #dfdf93;
+    border: 2px solid;
+}
+
