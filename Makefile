@@ -10,12 +10,9 @@ html: index.html songs.html
 	$(RENDER) `basename $<` > $@
 
 chords:
-	(cd hug-chords && git pull)
-	$(MAKE) -C hug-chords
+	$(MAKE) PDFDIR=`pwd`/pdfs -C hug-chords
 	mogrify  -format png hug-chords/pdfs/hug-songbook.pdf
 	mogrify -background '#ffffff' -flatten hug-chords/pdfs/*.png
-	rsync -av --delete hug-chords/pdfs .
-
 
 upload:
 	git add --all pdfs
