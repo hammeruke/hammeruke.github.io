@@ -17,7 +17,8 @@ def render(name):
     tmpl = env.get_template(name)
     args = {}
 
-    args['folders'], args['pngs'] = read_chords()
+    args['folders'] = read_chords()
+    args['pngs'] = read_pngs()
 
     return tmpl.render(**args)
 
@@ -42,31 +43,28 @@ def get_title_author(path):
 
     return title, author
 
+def relpath(root, fn):
+    """Return a file name relative to root"""
+    if not fn.startswith(root):
+        raise ValueError("'%s' is not a prefix of '%s'" % (root, fn))
+    return fn[len(root)+1:]
+
 def read_chords():
     from collections import namedtuple
     Folder = namedtuple('Folder', 'title content')
     Pdf = namedtuple('Pdf', 'path title author')
-    Png = namedtuple('Png', 'path')
-    pdfroot = fullpath('hug-chords', 'pdfs')
-
-    def relpath(fn):
-        """Return a file name relative to pdfroot"""
-        return fn[len(pdfroot)+1:]
+    pdfroot = fullpath('pdfs')
 
     folders = []
-    pngs = []
     for (dirpath, dirnames, filenames) in os.walk(pdfroot):
         f = Folder(
-            title=(relpath(dirpath) or 'books').title(),
+            title=(relpath(pdfroot, dirpath) or 'books').title(),
             content=[])
         folders.append(f)
         for fn in filenames:
-            if fn.endswith('.png'):
-                path = relpath(dirpath + '/' + fn)
-                pngs.append(Png(path))
             if not fn.endswith('.pdf'):
                 continue
-            path = relpath(dirpath + '/' + fn)
+            path = relpath(pdfroot, dirpath + '/' + fn)
             title, author = get_title_author(path)
             pdf = Pdf(
                 path='pdfs/' + path,
@@ -77,7 +75,18 @@ def read_chords():
 
     folders.sort(key=attrgetter('title'))
 
-    return folders, pngs
+    return folders
+
+def read_pngs():
+    pngs = []
+    for (dirpath, dirnames, filenames) in os.walk('pngs'):
+        for fn in filenames:
+            if fn.endswith('.png'):
+                path = dirpath + '/' + fn
+                pngs.append(path)
+
+    pngs.sort()
+    return pngs
 
 if __name__ == '__main__':
     import sys

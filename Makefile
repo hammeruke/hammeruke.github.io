@@ -8,7 +8,7 @@ all: pdfs pngs html
 
 html: index.html songs.html
 
-%.html: templates/%.tmpl templates/base.tmpl
+%.html: templates/%.tmpl templates/base.tmpl $(RENDER)
 	$(RENDER) `basename $<` > $@
 
 pdfs:

@@ -31,11 +31,11 @@
       <h1 class="text-center">What songs do HUG play?</h1>
         <div class="col-md-8"><div class="carousel slide" id="songbookCarousel" data-ride="carousel">
             <a href="pdfs/hug-songbook.pdf">
-                <div class="carousel-inner">
-                    {% for png in pngs %}
-                        <div class="item {% if loop.index0 == 0 %}active{% endif %}"><img src="pdfs/{{ png.path }}"></div>
-                    {% endfor %}
-                </div>
+              <div class="carousel-inner">
+                {% for png in pngs %}
+                  <div class="item {% if loop.index0 == 0 %}active{% endif %}"><img src="{{ png }}"></div>
+                {% endfor %}
+              </div>
             </a>
         </div></div>
         <div class="col-md-4">
