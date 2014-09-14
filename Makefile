@@ -1,24 +1,32 @@
 RENDER = ./bin/render.py
+PDFS=$(wildcard pdfs/hug/*.pdf)
+PNGS=$(patsubst pdfs/%.pdf,pngs/%.png,$(PDFS))
 
-.PHONY: chords touch
+.PHONY: pdfs touch
 
-all: chords html
+all: pdfs pngs html
 
 html: index.html songs.html
 
 %.html: templates/%.tmpl templates/base.tmpl
 	$(RENDER) `basename $<` > $@
 
-chords:
+pdfs:
 	$(MAKE) PDFDIR=`pwd`/pdfs -C hug-chords
-	mogrify  -format png hug-chords/pdfs/hug-songbook.pdf
-	mogrify -background '#ffffff' -flatten hug-chords/pdfs/*.png
+
+pngs: $(PNGS)
+
+pngs/%.png: pdfs/%.pdf
+	mkdir -p `dirname $@`
+	convert $< -format png -background '#ffffff' -flatten $@
 
 upload:
-	git add --all pdfs
+	git add --all pdfs pngs
 	git add *.html
 	git commit -m "Commit for upload on `date`"
 	git push
 
 touch:
 	find pdfs -name "*.pdf" -exec touch {} \;
+	sleep 1
+	find pngs -name "*.png" -exec touch {} \;
