@@ -27,7 +27,7 @@ newsongs:
 upload:
 	git add --all pdfs pngs
 	git add *.html
-	git add hug-songs
+	git add hug-chords
 	git commit -m "Commit for upload on `date`"
 	git push
 
