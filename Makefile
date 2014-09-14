@@ -1,6 +1,6 @@
 RENDER = ./bin/render.py
 
-.PHONY: chords
+.PHONY: chords touch
 
 all: chords html
 
@@ -19,3 +19,6 @@ upload:
 	git add *.html
 	git commit -m "Commit for upload on `date`"
 	git push
+
+touch:
+	find pdfs -name "*.pdf" -exec touch {} \;
