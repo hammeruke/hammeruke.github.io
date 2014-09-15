@@ -2,6 +2,7 @@
 
 import re
 import os
+import json
 from operator import attrgetter
 from jinja2 import Environment, FileSystemLoader
 
@@ -12,6 +13,7 @@ def fullpath(*components):
 
 tmpldir = os.path.abspath(os.path.join('templates'))
 env = Environment(loader=FileSystemLoader(tmpldir))
+env.filters['jsonify'] = json.dumps
 
 def render(name):
     tmpl = env.get_template(name)
